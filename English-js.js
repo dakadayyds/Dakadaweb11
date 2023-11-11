@@ -30,4 +30,4 @@ class example{
 
 }
 
-module.exports=example   //不要忘记它！
+
