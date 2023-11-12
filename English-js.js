@@ -26,7 +26,7 @@ class example{
     }
   method(){
 
-    return this.nowkey;
+    return nowkey;
   }
 
 }
