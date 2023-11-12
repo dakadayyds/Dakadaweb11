@@ -11,11 +11,12 @@ class example{
             name:'extension_name',
             menuIconURI:image,
             blockIconURI: image,
-            block:[
+            blocks:[
                 {
                     opcode:"method",
                     blockType:Scratch.BlockType.REPORTER,
                     text:"keydown",
+		    arguments: {}
                 }  
             ]
         }
