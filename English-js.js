@@ -29,5 +29,5 @@ class example{
   }
 
 }
-
+    Scratch.extensions.register(new example());
 })(Scratch);
