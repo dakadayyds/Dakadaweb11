@@ -14,6 +14,8 @@ class example{
             name:'extension_name',
             menuIconURI:image,
             blockIconURI: image,
+		color1: '#FFC93E',
+            color2: '#FFC93E',
             blocks:[
                 {
                     opcode:"method",
