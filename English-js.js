@@ -7,6 +7,11 @@ class example{
 	document.onkeydown = function(event){
 				        nowkey=event.key;
 		}
+	document.onkeyup=function(event){
+		if(event.key=nowkey){
+			nowkey='';
+		}
+	}
   }
     getInfo(){
         return{
