@@ -8,7 +8,7 @@ class example{
 				        nowkey=event.key;
 		}
 	document.onkeyup=function(event){
-		if(event.key=nowkey){
+		if(event.key==nowkey){
 			nowkey='';
 		}
 	}
