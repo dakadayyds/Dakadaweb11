@@ -15,8 +15,8 @@ class example{
   }
     getInfo(){
         return{
-            id:"id",
-            name:'extension_name',
+            id:"Englishbydakada",
+            name:'English',
             menuIconURI:image,
             blockIconURI: image,
 		color1: '#FFC93E',
