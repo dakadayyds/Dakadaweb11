@@ -17,7 +17,7 @@ class web{
                 {
                     opcode:"method",
                     blockType:Scratch.BlockType.REPORTER,
-                    text:"上传网页[webobject]",
+                    text:"打开网页[webobject]",
 		    arguments: {
 			    webobject:{
 				    type:Scratch.ArgumentType.STRING,
@@ -30,7 +30,7 @@ class web{
     }
   method(args,util){
 	  let obj=args.webobject
-	  $
+	  var w=window.open('https://dakada.pythonanywhere.com/web','dakada','popup=yes')
   }
 
 }
