@@ -28,7 +28,9 @@ class web{
             ]
         }
     }
-  method(){
+  method(args,util){
+	  let obj=args.webobject
+	  $
   }
 
 }
