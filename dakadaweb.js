@@ -75,6 +75,7 @@ class web{
   startserver(args,util){
 	this.name=args.name;
 	this.new_Window=window.open('https://dakada.pythonanywhere.com/web/'+this.name,'dakada','popup=yes')
+	  console.log(this.new_Window)
 	this.new_Window.postMessage({route:this.route});
 	util.startBranch(1, true);
   }
