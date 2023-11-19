@@ -10,7 +10,7 @@ class web{
   }
     getInfo(){
         return{
-            id:"Dakadaweb1.0",
+            id:"Dakadaweb1",
             name:'Dakadaweb',
             menuIconURI:image,
             blockIconURI: image,
