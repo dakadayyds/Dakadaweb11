@@ -26,7 +26,7 @@ class web{
 				    type:Scratch.ArgumentType.STRING,
 				    defaultValue:""
 			    }
-		    }
+		    },
 			branchCount: 1,
 		},
 	                {
