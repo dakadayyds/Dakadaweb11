@@ -19,7 +19,7 @@ class web{
             blocks:[
                 {
                     opcode:"startserver",
-                    blockType:Scratch.BlockType.REPORTER,
+                    blockType:Scratch.BlockType.COMMAND,
                     text:"开启服务器[name]",
 		    arguments: {
 			    name:{
