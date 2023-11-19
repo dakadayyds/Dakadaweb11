@@ -10,7 +10,7 @@ class web{
   }
     getInfo(){
         return{
-            id:"Dakadaweb1",
+            id:"Dakadaweb11",
             name:'Dakadaweb',
             menuIconURI:image,
             blockIconURI: image,
@@ -75,7 +75,7 @@ class web{
   startserver(args,util){
 	this.name=args.name;
 	this.new_Window=window.open('https://dakada.pythonanywhere.com/web/'+this.name,'dakada','popup=yes')
-	this.new_Window.postMessage({parentwindow:window,route:this.route});
+	this.new_Window.postMessage({route:this.route});
 	util.startBranch(1, true);
   }
   message(args,util){
