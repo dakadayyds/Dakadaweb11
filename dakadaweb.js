@@ -6,8 +6,10 @@ class web{
 	  this.name="";
 	this.route=[]
 	  this.getmessage='';
-	  this.util=null;    //scope var
 	window.addEventListener('message', function(event){this.getmessage=event.data}, false); 
+	  this.server=function (util){
+		util.startBranch(1,true)
+	  }
   }
     getInfo(){
         return{
@@ -73,15 +75,12 @@ class web{
             ]
         }
     }
-	get server(){
-		this.util.startBranch(1,true)
-	}
+
   startserver(args,util){
 	this.name=args.name;
 	this.new_Window=window.open('https://dakada.pythonanywhere.com/web/'+this.name,'dakada','popup=yes')
 	this.new_Window.postMessage({route:this.route});
-	this.util=util;
-	this.server()
+	this.server(util)
   }
   message(args,util){
 	  let message=args.message;
