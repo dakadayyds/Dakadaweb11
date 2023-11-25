@@ -7,6 +7,13 @@ class web{
 	this.route=[]
 	  this.getmessage='';
 	  this.new_Window=null;
+	  this.messageprocess=function(event){
+		this.getmessage=event.data;
+		if(this.getmessage=="loaded!"){
+			this.new_Window.postMessage({route:this.route},"*");
+			this.getmessage='';
+		}
+	} 
   }
     getInfo(){
         return{
@@ -75,17 +82,15 @@ class web{
   startserver(args,util){
 	this.name=args.name;
 	this.new_Window=window.open('https://dakada.pythonanywhere.com/web/'+this.name,'dakada','popup=yes')
-	window.onmessage=function(event){
-		this.getmessage=event.data;
-		if(this.getmessage=="loaded!"){
-			this.new_Window.postMessage({route:this.route},"*");
-			this.getmessage='';
-		}
-	} 
+	window.onmessage=this.messageprocess
   }
   message(args,util){
 	  let message=args.message;
-	  this.new_Window.postMessage(args.message);
+	  try{
+	 	 this.new_Window.postMessage(args.message);
+	  }catch(e){
+		  console.err("[Dakadaerr]服务器未开启或已关闭！")
+	  }
 
   }
 	addroute(args,util){
