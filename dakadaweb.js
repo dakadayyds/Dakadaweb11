@@ -6,15 +6,7 @@ class web{
 	  this.name="";
 	this.route=[]
 	  this.getmessage='';
-	  this.new_Window='';
-	window.addEventListener('message', function(event){
-		this.getmessage=event.data;
-		console.log(this.new_Window);
-		if(this.getmessage=="loaded!"){
-			this.new_Window.postMessage({route:this.route});
-			this.getmessage='';
-		}
-							  }, false); 
+	  this.new_Window=null;
   }
     getInfo(){
         return{
@@ -83,11 +75,17 @@ class web{
   startserver(args,util){
 	this.name=args.name;
 	this.new_Window=window.open('https://dakada.pythonanywhere.com/web/'+this.name,'dakada','popup=yes')
-	this.new_Window.postMessage({route:this.route});
   }
   message(args,util){
 	  let message=args.message;
 	  this.new_Window.postMessage(args.message);
+	  window.addEventListener('message', function(event){
+		this.getmessage=event.data;
+		if(this.getmessage=="loaded!"){
+			this.new_Window.postMessage({route:this.route});
+			this.getmessage='';
+		}
+							  }, false); 
   }
 	addroute(args,util){
 		let {HTML,Javascript,css}=args;
