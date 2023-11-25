@@ -12,6 +12,8 @@
     iframe.style.width = `${effectiveWidth}px`;
     iframe.style.height = `${effectiveHeight}px`;
   }
+    console.log(Scratch)
+    console.log(Scratch.renderer)
        let overlay = Scratch.renderer.addOverlay(iframe,"scale");
             Scratch.renderer._updateOverlays();
           src()
