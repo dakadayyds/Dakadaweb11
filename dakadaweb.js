@@ -26,7 +26,7 @@ class web{
                 {
                     opcode:"startserver",
                     blockType:Scratch.BlockType.COMMAND,
-                    text:"开启服务器[name][webobject]",
+                    text:"开启服务器[name][webobject][page]",
 		    arguments: {
 			    name:{
 				    type:Scratch.ArgumentType.STRING,
@@ -35,6 +35,10 @@ class web{
 			    webobject:{
 				    type:Scratch.ArgumentType.STRING,
 				    defaultValue:'class web{//something}'
+			    },
+			    page:{
+				    type:Scratch.ArgumentType.STRING,
+				    defaultValue:'/'
 			    }
 		    },
 		},
@@ -61,6 +65,9 @@ class web{
 
   startserver(args,util){
 	this.name=args.name;
+	let object=args.webobject;
+	let newobject=eval(object);
+	
 	new_Window=window.open('https://dakada.pythonanywhere.com/web/'+this.name,'dakada','popup=yes')
 	window.onmessage=this.messageprocess
   }
