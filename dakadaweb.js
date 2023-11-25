@@ -30,11 +30,11 @@ class web{
 		    arguments: {
 			    name:{
 				    type:Scratch.ArgumentType.STRING,
-				    defaultValue:''
+				    defaultValue:'dakada'
 			    },
 			    webobject:{
 				    type:Scratch.ArgumentType.STRING,
-				    defaultValue:''
+				    defaultValue:'class web{//something}'
 			    }
 		    },
 		},
@@ -45,7 +45,7 @@ class web{
 		    arguments: {
 			    message:{
 				    type:Scratch.ArgumentType.STRING,
-				    defaultValue:''
+				    defaultValue:'message'
 			    }
 		    }
 		},	                
