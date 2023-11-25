@@ -47,29 +47,6 @@ class web{
 			    }
 		    }
 		},	                
- 		{
-                    opcode:"addroute",
-                    blockType:Scratch.BlockType.COMMAND,
-                    text:"新增页面[name],(code:[HTML],[Javascript],[css])",
-		    arguments: {
-			    name:{
-				    type:Scratch.ArgumentType.STRING,
-				    defaultValue:""
-			    },
-			    HTML:{
-				    type:Scratch.ArgumentType.STRING,
-				    defaultValue:""
-			    },
-			    Javascript:{
-				    type:Scratch.ArgumentType.STRING,
-				    defaultValue:""
-			    },
-			    css:{
-				    type:Scratch.ArgumentType.STRING,
-				    defaultValue:""
-			    }
-		    }
-		},
  	                {
                     opcode:"postmessager",
                     blockType:Scratch.BlockType.REPORTER,
