@@ -11,7 +11,7 @@ class web{
   }
 	messageprocess(event){
 		getmessage=event.data;
-		if(this.getmessage=="loaded!"){
+		if(getmessage=="loaded!"){
 			new_Window.postMessage({route:route},"*");
 			getmessage='';
 		}
