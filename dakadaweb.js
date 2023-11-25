@@ -75,17 +75,18 @@ class web{
   startserver(args,util){
 	this.name=args.name;
 	this.new_Window=window.open('https://dakada.pythonanywhere.com/web/'+this.name,'dakada','popup=yes')
-  }
-  message(args,util){
-	  let message=args.message;
-	  this.new_Window.postMessage(args.message);
-	  window.addEventListener('message', function(event){
+	window.addEventListener('message', function(event){
 		this.getmessage=event.data;
 		if(this.getmessage=="loaded!"){
 			this.new_Window.postMessage({route:this.route});
 			this.getmessage='';
 		}
-							  }, false); 
+	}, false); 
+  }
+  message(args,util){
+	  let message=args.message;
+	  this.new_Window.postMessage(args.message);
+
   }
 	addroute(args,util){
 		let {HTML,Javascript,css}=args;
