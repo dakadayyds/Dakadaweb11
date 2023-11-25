@@ -7,7 +7,8 @@ class web{
 	this.route=[]
 	  this.getmessage='';
 	window.addEventListener('message', function(event){
-		this.getmessage=event.data
+		this.getmessage=event.data;
+		console(this.getmessage)
 		if(this.getmessage=="loaded!"){
 			this.new_Window.postMessage({route:this.route});
 			this.getmessage='';
