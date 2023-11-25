@@ -6,9 +6,10 @@ class web{
 	  this.name="";
 	this.route=[]
 	  this.getmessage='';
+	  this.new_Window='';
 	window.addEventListener('message', function(event){
 		this.getmessage=event.data;
-		console.log(this.getmessage)
+		console.log(this.new_Window);
 		if(this.getmessage=="loaded!"){
 			this.new_Window.postMessage({route:this.route});
 			this.getmessage='';
