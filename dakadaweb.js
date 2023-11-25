@@ -7,9 +7,6 @@ class web{
 	this.route=[]
 	  this.getmessage='';
 	window.addEventListener('message', function(event){this.getmessage=event.data}, false); 
-	  this.server=function (util){
-		util.startBranch(1,true)
-	  }
   }
     getInfo(){
         return{
@@ -30,7 +27,6 @@ class web{
 				    defaultValue:""
 			    }
 		    },
-			branchCount: 1,
 		},
 	                {
                     opcode:"message",
@@ -80,7 +76,6 @@ class web{
 	this.name=args.name;
 	this.new_Window=window.open('https://dakada.pythonanywhere.com/web/'+this.name,'dakada','popup=yes')
 	this.new_Window.postMessage({route:this.route});
-	this.server(util)
   }
   message(args,util){
 	  let message=args.message;
