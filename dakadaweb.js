@@ -6,8 +6,6 @@ const image='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvM
 class web{
   constructor(){
 	  this.name="";
-	  this.new_Window=null;
-
   }
 	messageprocess(event){
 		getmessage=event.data;
@@ -28,11 +26,15 @@ class web{
                 {
                     opcode:"startserver",
                     blockType:Scratch.BlockType.COMMAND,
-                    text:"开启服务器[name]",
+                    text:"开启服务器[name][webobject]",
 		    arguments: {
 			    name:{
 				    type:Scratch.ArgumentType.STRING,
-				    defaultValue:""
+				    defaultValue:''
+			    },
+			    webobject:{
+				    type:Scratch.ArgumentType.STRING,
+				    defaultValue:''
 			    }
 		    },
 		},
@@ -43,7 +45,7 @@ class web{
 		    arguments: {
 			    message:{
 				    type:Scratch.ArgumentType.STRING,
-				    defaultValue:""
+				    defaultValue:''
 			    }
 		    }
 		},	                
