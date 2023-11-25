@@ -7,14 +7,15 @@ class web{
 	this.route=[]
 	  this.getmessage='';
 	  this.new_Window=null;
-	  this.messageprocess=function(event){
+
+  }
+	messageprocess(event){
 		this.getmessage=event.data;
 		if(this.getmessage=="loaded!"){
 			this.new_Window.postMessage({route:this.route},"*");
 			this.getmessage='';
 		}
 	} 
-  }
     getInfo(){
         return{
             id:"Dakadaweb11",
