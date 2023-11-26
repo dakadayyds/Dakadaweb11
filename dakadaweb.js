@@ -23,17 +23,17 @@ class web{
 	}
     getInfo(){
         return{
-            id:"Dakadaweb11",
+            id:"Dakadaweb114514",
             name:'Dakadaweb',
             menuIconURI:image,
             blockIconURI: image,
-		color1: '#FFC93E',
+	    color1: '#FFC93E',
             color2: '#FFC93E',
             blocks:[
                 {
                     opcode:"startserver",
                     blockType:Scratch.BlockType.COMMAND,
-                    text:"开启服务器[name][webobject][page]",
+                    text:"开启服务器[webobject][page]",
 		    arguments: {
 			    webobject:{
 				    type:Scratch.ArgumentType.STRING,
