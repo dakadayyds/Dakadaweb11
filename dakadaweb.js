@@ -111,6 +111,9 @@ class web{
 	  try{
 		  console.log(new_Window)
 	 	new_Window.postMessage(message);
+		  if(new_Window.closed){
+			  throw new Error("can_not_get")
+		  }
 	  }catch(e){
 		  console.err("[Dakadaerr]服务器未开启或已关闭！")
 	  }
