@@ -11,10 +11,16 @@ class web{
 	messageprocess(event){
 		getmessage=event.data;
 		if(getmessage=="loaded!"){
-			new_Window.postMessage({route:route},"*");
+			new_Window.postMessage({HTML:HTML},"*");
 			getmessage='';
 		}
 	} 
+	error500(){
+		return '<h1>503</h1><p>there are some error on your server</p>';
+	}
+	error404(){
+		return '<h1>404</h1><p>page not found</p>';
+	}
     getInfo(){
         return{
             id:"Dakadaweb11",
@@ -76,12 +82,28 @@ class web{
 	}
 	let page=pageparam.get('page')
 	if(route.hasOwnProperty(page)){
-		HTML=route.get(page)()
+		try{
+			HTML=route.get(page)()
+		}catch(e){
+			if(route.hasOwnProperty('error500')){
+				try{
+					HTML=route.get('error500')()
+				}catch(e){
+					HTML=this.error500()
+				}
+			}else{
+				HTML=this.error500()
+			}
+		}
 	}else{
 		if(route.hasOwnProperty('error404')){
-			HTML=route.get('error404')()
+			try{
+				HTML=route.get('error404')()
+			}catch(e){
+				HTML=this.error500()
+			}
 		}else{
-			HTML='<h1>404</h1><p>page not found</p>'
+			HTML=this.error404()
 		}
 	}
 	new_Window=window.open('https://dakada.pythonanywhere.com/web/'+this.name,'dakada','popup=yes')
