@@ -109,7 +109,6 @@ class web{
   message(args,util){
 	  let message=args.message;
 	  try{
-		  console.log(new_Window)
 	 	new_Window.postMessage(message);
 		  if(new_Window.closed){
 			  throw new Error("can_not_get")
