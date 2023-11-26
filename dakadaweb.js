@@ -84,6 +84,7 @@ class web{
 	let page=pageparam.get('page')
 	if(route.hasOwnProperty(page)){
 		try{
+			console.log(route)
 			HTML=route.get(page)()
 		}catch(e){
 			if(route.hasOwnProperty('error500')){
