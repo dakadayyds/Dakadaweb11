@@ -35,10 +35,6 @@ class web{
                     blockType:Scratch.BlockType.COMMAND,
                     text:"开启服务器[name][webobject][page]",
 		    arguments: {
-			    name:{
-				    type:Scratch.ArgumentType.STRING,
-				    defaultValue:'dakada'
-			    },
 			    webobject:{
 				    type:Scratch.ArgumentType.STRING,
 				    defaultValue:'class web{//something}'
@@ -71,14 +67,13 @@ class web{
     }
 
   startserver(args,util){
-	this.name=args.name;
 	let temp=new Function(args.webobject);
 	let webobject=new (new temp()).webObject();
 	route=webobject.Info();
 	let pageparam;
-	try{
-		pageparam=new URLSearchParams('?page='+args.page.split("@")[1])
-	}catch(e){
+	this.name=args.page.split("@")[0]
+	pageparam=new URLSearchParams('?page='+args.page.split("@")[1])
+	if(!pageparam){
 		pageparam=new URLSearchParams('?page=index')
 	}
 	let page=pageparam.get('page')
