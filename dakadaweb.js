@@ -7,13 +7,12 @@ const image='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvM
 class web{
   constructor(){
 	  this.name="";
-	  new_Window=window.open('https://dakada.pythonanywhere.com/web/','dakada','popup=yes')
-	  	window.onmessage=this.messageprocess
+
   }
 	messageprocess(event){
 		getmessage=event.data;
 		if(getmessage=="loaded!"){
-			new_Window.postMessage({html:'<p>give a object to start</p>'},"*");
+			new_Window.postMessage({html:HTML},"*");
 			getmessage='';
 		}
 	} 
@@ -106,7 +105,8 @@ class web{
 			HTML=this.error404()
 		}
 	}
-
+	  new_Window=window.open('https://dakada.pythonanywhere.com/web/','dakada','popup=yes')
+	  window.onmessage=this.messageprocess
   }
   message(args,util){
 	  let message=args.message;
