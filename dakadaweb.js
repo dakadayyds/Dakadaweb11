@@ -72,8 +72,8 @@ class web{
 
   startserver(args,util){
 	this.name=args.name;
-	let object=new Function(args.webobject);
-	let webobject=new object.webObject();
+	let temp=new Function(args.webobject);
+	let webobject=new (new temp()).webObject();
 	route=webobject.Info();
 	try{
 		pageparam=new URLSerachParam('?page='+args.page.split("@")[1])
