@@ -24,7 +24,7 @@ class web{
 	}
     getInfo(){
         return{
-            id:"Dakadawebrelease",
+            id:"Dakadawebrelease1.1",
             name:'Dakadaweb',
             menuIconURI:image,
             blockIconURI: image,
@@ -69,44 +69,48 @@ class web{
     }
 
   startserver(args,util){
-	let temp=new Function(args.webobject);
-	let webobject=new (new temp()).webObject();
-	route=webobject.Info();
-	let pageparam;
-	this.name=args.page.split("@")[0]
-	pageparam=new URLSearchParams('?page='+args.page.split("@")[1])
-	if(!args.page.split("@")[1]){
-		pageparam=new URLSearchParams('?page=index')
-	}
-	let page=pageparam.get('page')
-	if(route.hasOwnProperty(page)){
-		try{
-			HTML=route[page]()
-		}catch(e){
-			console.err(`[Dakada]caught an error!${e}`)
-			if(route.hasOwnProperty('error500')){
+	try{
+		let temp=new Function(args.webobject);
+		let webobject=new (new temp()).webObject();
+		route=webobject.Info();
+		let pageparam;
+		this.name=args.page.split("@")[0]
+		pageparam=new URLSearchParams('?page='+args.page.split("@")[1])
+		if(!args.page.split("@")[1]){
+			pageparam=new URLSearchParams('?page=index')
+		}
+		let page=pageparam.get('page')
+		if(route.hasOwnProperty(page)){
+			try{
+				HTML=route[page]()
+			}catch(e){
+				console.err(`[Dakada]caught an error!${e}`)
+				if(route.hasOwnProperty('error500')){
+					try{
+						HTML=route['error500']()
+					}catch(e){
+						HTML=this.error500()
+					}
+				}else{
+				HTML=this.error500()
+				}
+			}
+		}else{
+			if(route.hasOwnProperty('error404')){
 				try{
-					HTML=route['error500']()
+					HTML=route['error404']()
 				}catch(e){
 					HTML=this.error500()
 				}
 			}else{
-				HTML=this.error500()
+				HTML=this.error404()
 			}
 		}
-	}else{
-		if(route.hasOwnProperty('error404')){
-			try{
-				HTML=route['error404']()
-			}catch(e){
-				HTML=this.error500()
-			}
-		}else{
-			HTML=this.error404()
-		}
+	  	new_Window=window.open('https://dakada.pythonanywhere.com/web/','dakada','popup=yes')
+	  	window.onmessage=this.messageprocess
+	}catch(e){
+		console.error(`[Dakada]Invaild webobject,error:${e}`)
 	}
-	  new_Window=window.open('https://dakada.pythonanywhere.com/web/','dakada','popup=yes')
-	  window.onmessage=this.messageprocess
   }
   message(args,util){
 	  let message=args.message;
