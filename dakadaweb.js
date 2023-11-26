@@ -7,11 +7,13 @@ const image='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvM
 class web{
   constructor(){
 	  this.name="";
+	  new_Window=window.open('https://dakada.pythonanywhere.com/web/','dakada','popup=yes')
+	  	window.onmessage=this.messageprocess
   }
 	messageprocess(event){
 		getmessage=event.data;
 		if(getmessage=="loaded!"){
-			new_Window.postMessage({html:HTML},"*");
+			new_Window.postMessage({html:'<p>give a object to start</p>'},"*");
 			getmessage='';
 		}
 	} 
@@ -46,6 +48,23 @@ class web{
 		    },
 		},
  
+               {
+                    opcode:"message",
+                    blockType:Scratch.BlockType.COMMAND,
+                    text:"向前端发送消息[message]",
+		    arguments: {
+			    message:{
+				    type:Scratch.ArgumentType.STRING,
+				    defaultValue:'message'
+			    }
+		    }
+		},	                
+ 	                {
+                    opcode:"postmessager",
+                    blockType:Scratch.BlockType.REPORTER,
+                    text:"前端发送的消息",
+		    arguments: {}
+		},	  
             ]
         }
     }
@@ -87,10 +106,21 @@ class web{
 			HTML=this.error404()
 		}
 	}
-	new_Window=window.open('https://dakada.pythonanywhere.com/web/'+this.name,'dakada','popup=yes')
-	window.onmessage=this.messageprocess
-  }
 
+  }
+  message(args,util){
+	  let message=args.message;
+	  try{
+	 	new_Window.postMessage(message,"*");
+		  if(new_Window.closed){
+			  throw new Error("can_not_get")
+		  }
+	  }catch(e){
+		  console.error("[Dakadaerr]服务器未开启或已关闭！")
+	  }
+
+  }
+postmessager(){return getmessage}
 }
     Scratch.extensions.register(new web());
 })(Scratch);
