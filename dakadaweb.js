@@ -115,7 +115,7 @@ class web{
 			  throw new Error("can_not_get")
 		  }
 	  }catch(e){
-		  console.err("[Dakadaerr]服务器未开启或已关闭！")
+		  console.error("[Dakadaerr]服务器未开启或已关闭！")
 	  }
 
   }
