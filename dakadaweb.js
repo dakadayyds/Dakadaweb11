@@ -23,7 +23,7 @@ class web{
 	}
     getInfo(){
         return{
-            id:"Dakadaweb114514",
+            id:"Dakadawebrelease",
             name:'Dakadaweb',
             menuIconURI:image,
             blockIconURI: image,
@@ -45,23 +45,7 @@ class web{
 			    }
 		    },
 		},
-	 //                {
-  //                   opcode:"message",
-  //                   blockType:Scratch.BlockType.COMMAND,
-  //                   text:"向前端发送消息[message]",
-		//     arguments: {
-		// 	    message:{
-		// 		    type:Scratch.ArgumentType.STRING,
-		// 		    defaultValue:'message'
-		// 	    }
-		//     }
-		// },	                
- 	//                 {
-  //                   opcode:"postmessager",
-  //                   blockType:Scratch.BlockType.REPORTER,
-  //                   text:"前端发送的消息",
-		//     arguments: {}
-		// },	   
+ 
             ]
         }
     }
@@ -106,19 +90,7 @@ class web{
 	new_Window=window.open('https://dakada.pythonanywhere.com/web/'+this.name,'dakada','popup=yes')
 	window.onmessage=this.messageprocess
   }
-//   message(args,util){
-// 	  let message=args.message;
-// 	  try{
-// 	 	new_Window.postMessage(message);
-// 		  if(new_Window.closed){
-// 			  throw new Error("can_not_get")
-// 		  }
-// 	  }catch(e){
-// 		  console.error("[Dakadaerr]服务器未开启或已关闭！")
-// 	  }
 
-//   }
-// postmessager(){return getmessage}
 }
     Scratch.extensions.register(new web());
 })(Scratch);
