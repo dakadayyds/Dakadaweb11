@@ -109,6 +109,7 @@ class web{
   message(args,util){
 	  let message=args.message;
 	  try{
+		  console.log(new_Window)
 	 	new_Window.postMessage(message);
 	  }catch(e){
 		  console.err("[Dakadaerr]服务器未开启或已关闭！")
