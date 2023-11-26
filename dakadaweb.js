@@ -75,6 +75,7 @@ class web{
 	let temp=new Function(args.webobject);
 	let webobject=new (new temp()).webObject();
 	route=webobject.Info();
+	let pageparam;
 	try{
 		pageparam=new URLSearchParams('?page='+args.page.split("@")[1])
 	}catch(e){
@@ -118,10 +119,6 @@ class web{
 	  }
 
   }
-	addroute(args,util){
-		let {HTML,Javascript,css}=args;
-		route.push({html:HTML,javascript:Javascript,Css:css})
-	}
 postmessager(){return getmessage}
 }
     Scratch.extensions.register(new web());
