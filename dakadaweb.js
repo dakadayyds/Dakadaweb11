@@ -76,9 +76,9 @@ class web{
 	let webobject=new (new temp()).webObject();
 	route=webobject.Info();
 	try{
-		pageparam=new URLSerachParams('?page='+args.page.split("@")[1])
+		pageparam=new URLSearchParams('?page='+args.page.split("@")[1])
 	}catch(e){
-		pageparam=new URLSerachParams('?page=index')
+		pageparam=new URLSearchParams('?page=index')
 	}
 	let page=pageparam.get('page')
 	if(route.hasOwnProperty(page)){
