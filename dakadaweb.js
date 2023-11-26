@@ -16,7 +16,7 @@ class web{
 		}
 	} 
 	error500(){
-		return '<h1>503</h1><p>there are some error on your server</p>';
+		return '<h1>503</h1><p>Maybe there are some errors </p>';
 	}
 	error404(){
 		return '<h1>404</h1><p>page not found</p>';
@@ -84,12 +84,12 @@ class web{
 	let page=pageparam.get('page')
 	if(route.hasOwnProperty(page)){
 		try{
-			HTML=route.get(page)()
+			HTML=route[page]()
 		}catch(e){
-			console.log(e)
+			console.err(`[Dakada]caught an error!${e}`)
 			if(route.hasOwnProperty('error500')){
 				try{
-					HTML=route.get('error500')()
+					HTML=route['error500']()
 				}catch(e){
 					HTML=this.error500()
 				}
@@ -100,7 +100,7 @@ class web{
 	}else{
 		if(route.hasOwnProperty('error404')){
 			try{
-				HTML=route.get('error404')()
+				HTML=route['error404']()
 			}catch(e){
 				HTML=this.error500()
 			}
