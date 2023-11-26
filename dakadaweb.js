@@ -73,7 +73,7 @@ class web{
 	let pageparam;
 	this.name=args.page.split("@")[0]
 	pageparam=new URLSearchParams('?page='+args.page.split("@")[1])
-	if(!pageparam){
+	if(!args.page.split("@")[1]){
 		pageparam=new URLSearchParams('?page=index')
 	}
 	let page=pageparam.get('page')
