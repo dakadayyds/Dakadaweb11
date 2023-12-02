@@ -7,7 +7,7 @@ this.webObject=class{
   Info(){
     /*获取信息*/
     return{
-      index:this.index,  /*指令：open projectname or projectname@index*/
+      index:{HTML:this.index},  /*指令：open projectname or projectname@index*/
       /*testpage:this.method //open projectname@testpage*/
       /*error500:method1*/
       /*error404:method2*/
