@@ -10,9 +10,12 @@ this.webObject=class{
       index:this.index,  /*指令：open projectname or projectname@index*/
       /*testpage:this.method //open projectname@testpage*/
     }
+  }
     index(){
       return `<h1>hello!</h1><p>dakadaweb's example page</p>`
     }
     /*method(){return `something...`}*/
-  }
+  /*error404(){}*/
+    /*error500(){}*/
+  /*触发404或500错误时dakadaweb将调用他们，如果没有定义则显示默认页面*/
 }
