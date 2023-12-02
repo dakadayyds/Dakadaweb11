@@ -46,18 +46,7 @@ class web{
 			    }
 		    },
 		},
- 
-               {
-                    opcode:"message",
-                    blockType:Scratch.BlockType.COMMAND,
-                    text:"向前端发送消息[message]",
-		    arguments: {
-			    message:{
-				    type:Scratch.ArgumentType.STRING,
-				    defaultValue:'message'
-			    }
-		    }
-		},	                
+               
  	                {
                     opcode:"postmessager",
                     blockType:Scratch.BlockType.REPORTER,
