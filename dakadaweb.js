@@ -24,7 +24,7 @@ class web{
 	}
     getInfo(){
         return{
-            id:"dakadawebextension",
+            id:"dakadawebextensionre",
             name:'dakadaweb',
             menuIconURI:image,
             blockIconURI: image,
@@ -71,7 +71,7 @@ class web{
 		let page=pageparam.get('page')
 		if(route.hasOwnProperty(page)){
 			try{
-				HTML=route[page]()
+				HTML=route[page]['HTML']()
 			}catch(e){
 				console.err(`[Dakada]caught an error!${e}`)
 				if(route.hasOwnProperty('error500')){
