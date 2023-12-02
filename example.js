@@ -7,7 +7,7 @@ this.webObject=class{
   Info(){
     /*获取信息*/
     return{
-      index:{HTML:this.index},  /*指令：open projectname or projectname@index*/
+      index:{HTML:this.index,script:this.contentscript},  /*指令：open projectname or projectname@index，script见下方注释*/
       /*testpage:this.method //open projectname@testpage*/
       /*error500:method1*/
       /*error404:method2*/
@@ -17,6 +17,10 @@ this.webObject=class{
     index(){
       return `<h1>hello!</h1><p>dakadaweb's example page</p>`
     }
+  contentscript(){
+    console.log("hello!!!!")
+    /*内嵌于网页执行的脚本（HTML代码生成完后执行），代码保密性较强*/
+  }
     /*method(){return `something...`}*/
 
 }
