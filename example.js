@@ -18,7 +18,6 @@ this.webObject=class{
       return `<h1>hello!</h1><p>dakadaweb's example page</p>`;
     }
   contentscript(){
-    console.log("hello!!!!");
     /*内嵌于网页执行的脚本（HTML代码生成完后执行），代码保密性较强*/
     return 0;
   }
