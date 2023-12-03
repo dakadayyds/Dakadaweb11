@@ -17,9 +17,9 @@ this.webObject=class{
     index(){
       return `<h1>hello!</h1><p>dakadaweb's example page</p>`;
     }
+      /*内嵌于网页执行的脚本（HTML代码生成完后执行），代码保密性较强*/
   contentscript(){
-    /*内嵌于网页执行的脚本（HTML代码生成完后执行），代码保密性较强*/
-    return 0;
+        console.log("heelo");
   }
     /*method(){return `something...`}*/
 
