@@ -71,9 +71,8 @@ class dakadawebextension{
 		let page=pageparam.get('page')
 		if(route.hasOwnProperty(page)){
 			try{
-				let object=new route[page]()
-				HTML=object.template();
-				script=object.contentscript.toString()
+				HTML=route[page]['HTML']()
+				script=route[page]['script'].toString()
 			}catch(e){
 				console.err(`[Dakada]caught an error!${e}`)
 				if(route.hasOwnProperty('error500')){
