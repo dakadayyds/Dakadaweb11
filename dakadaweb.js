@@ -55,6 +55,12 @@ class dakadawebextension{
                     text:"前端发送的消息",
 		    arguments: {}
 		},	  
+		     	        {
+                    opcode:"re",
+                    blockType:Scratch.BlockType.COMMAND,
+                    text:"重置",
+		    arguments: {}
+		},	
             ]
         }
     }
@@ -120,6 +126,7 @@ class dakadawebextension{
 
   }
 postmessager(){return getmessage}
+re(){getmessage=''}
 }
     Scratch.extensions.register(new dakadawebextension());
 })(Scratch);
