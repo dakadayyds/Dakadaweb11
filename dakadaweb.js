@@ -24,7 +24,7 @@ class dakadawebextension{
 	}
     getInfo(){
         return{
-            id:"dakadawebextension1",
+            id:"dakadawebextensionbeta",
             name:'dakadaweb',
             menuIconURI:image,
             blockIconURI: image,
@@ -102,7 +102,7 @@ class dakadawebextension{
 	  	window.onmessage=this.messageprocess
 		return `successfully open the project ${name}`
 	}catch(e){
-		console.log(`{e}`)
+		console.log(`${e}`)
 		return `[Dakada]There is an error,see console for more information`
 	}
   }
