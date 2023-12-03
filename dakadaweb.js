@@ -14,10 +14,12 @@ class dakadawebextension{
 		if(getmessage=="loaded!"){
 			new_Window.postMessage({html:HTML,Script:script},"*");
 			getmessage='';
+		}else if(!(getmessage.split(':')[0]=="Error")){
+			getmessage='';
 		}
 	} 
 	error500(){
-		return '<h1>503</h1><p>Maybe there are some errors </p>';
+		return '<h1>503</h1><p>Maybe there is an error </p>';
 	}
 	error404(){
 		return '<h1>404</h1><p>page not found</p>';
