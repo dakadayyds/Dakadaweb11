@@ -24,7 +24,7 @@ class dakadawebextension{
 	}
     getInfo(){
         return{
-            id:"dakadawebextension",
+            id:"dakadawebextension2",
             name:'dakadaweb',
             menuIconURI:image,
             blockIconURI: image,
