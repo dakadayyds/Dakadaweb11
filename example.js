@@ -16,7 +16,7 @@ this.webObject=class{
   }
     index(){
         /*页面模板*/
-        return `<h1>hello!</h1><p>dakadaweb's example page</p>`;
+        return `<h1>hello!</h1><p>dakadawebs example page</p>`;
     }
   contentscript(){
           /*待html加载完毕后内嵌于网页执行的脚本，保密性较强*/
