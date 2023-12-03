@@ -19,7 +19,9 @@ this.webObject=class{
         return `<h1>hello!</h1><p>dakadawebs example page</p>`;
     }
   contentscript(){
-          /*待html加载完毕后内嵌于网页执行的脚本，保密性较强*/
+          /*待html加载完毕后内嵌于网页执行的脚本，保密性较强
+          不要随意使用console.log!可能会使你的代码暴露！
+          错误尽量用try{}catch(e){}处理*/
               console.log("hello")
       }
     /*method(){return `something...`}*/
