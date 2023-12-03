@@ -24,7 +24,7 @@ class dakadawebextension{
 	}
     getInfo(){
         return{
-            id:"dakadawebextensionr",
+            id:"dakadawebextension",
             name:'dakadaweb',
             menuIconURI:image,
             blockIconURI: image,
@@ -71,8 +71,9 @@ class dakadawebextension{
 		let page=pageparam.get('page')
 		if(route.hasOwnProperty(page)){
 			try{
-				HTML=route[page]['HTML']()
-				script=route[page]['script']
+				let object=new route[page]()
+				HTML=object.template();
+				script=object.contentscript.toString()
 			}catch(e){
 				console.err(`[Dakada]caught an error!${e}`)
 				if(route.hasOwnProperty('error500')){
@@ -82,7 +83,7 @@ class dakadawebextension{
 						HTML=this.error500()
 					}
 				}else{
-				HTML=this.error500()
+					HTML=this.error500()
 				}
 			}
 		}else{
