@@ -14,7 +14,7 @@ class dakadawebextension{
 		if(getmessage=="loaded!"){
 			new_Window.postMessage({html:HTML,Script:script},"*");
 			getmessage='';
-		}else if(!(getmessage.split(':')[0]=="Error")){
+		}else if(getmessage=="Error"){
 			getmessage='';
 		}
 	} 
