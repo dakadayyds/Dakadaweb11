@@ -7,11 +7,13 @@ this.webObject=class{
   Info(){
     /*获取信息*/
     return{
-      index:{HTML:this.index,script:this.contentscript},  /*指令：open projectname or projectname@index，script见下方注释*/
+      index:{HTML:this.index,script:this.contentscript},
+      /*指令：open projectname or projectname@index，script见下方注释*/
       /*testpage:this.method //open projectname@testpage*/
       /*{error500:method1}
       {error404:method2}
       ↑触发404或500错误时dakadaweb将调用error404或error500，如果没有定义则显示默认页面↑*/
+      /*可以使用redirect函数切换页面*/
     }
   }
     index(){
