@@ -74,7 +74,7 @@ class dakadawebextension{
 
   startserver(args,util){
 	try{
-		if(!(util=='没有')）{
+		if(!(util=='没有')){
 			let temp=new Function(args.webobject);
 			let webobject=new (new temp()).webObject();
 			route=webobject.Info();
@@ -115,7 +115,7 @@ class dakadawebextension{
 		}
 		
 	  	new_Window=window.open('https://dakada.pythonanywhere.com/webstage','dakada','popup=yes')
-		if(!(util=='没有')）{
+		if(!(util=='没有')){
 	  		window.onmessage=this.messageprocess
 		}
 		return `successfully open the project ${name}`
