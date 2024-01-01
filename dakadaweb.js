@@ -16,6 +16,13 @@ class dakadawebextension{
 			getmessage='';
 		}else if(getmessage=="Error"){
 			getmessage='';
+		}else{
+			try{
+				let relink=getmessage.link
+				window.dakadaweb.startserver({page:relink},'没有')
+				
+			}catch(e){
+			}
 		}
 	} 
 	error500(){
@@ -67,9 +74,11 @@ class dakadawebextension{
 
   startserver(args,util){
 	try{
-		let temp=new Function(args.webobject);
-		let webobject=new (new temp()).webObject();
-		route=webobject.Info();
+		if(!(util=='没有')）{
+			let temp=new Function(args.webobject);
+			let webobject=new (new temp()).webObject();
+			route=webobject.Info();
+		}
 		let pageparam;
 		let name=args.page.split("@")[0]
 		pageparam=new URLSearchParams('?page='+args.page.split("@")[1])
@@ -106,7 +115,9 @@ class dakadawebextension{
 		}
 		
 	  	new_Window=window.open('https://dakada.pythonanywhere.com/webstage','dakada','popup=yes')
-	  	window.onmessage=this.messageprocess
+		if(!(util=='没有')）{
+	  		window.onmessage=this.messageprocess
+		}
 		return `successfully open the project ${name}`
 	}catch(e){
 		console.log(e)
@@ -128,5 +139,6 @@ class dakadawebextension{
 postmessager(){return getmessage}
 re(){getmessage=''}
 }
+	window.dakadaweb=new dakadawebextension();
     Scratch.extensions.register(new dakadawebextension());
 })(Scratch);
